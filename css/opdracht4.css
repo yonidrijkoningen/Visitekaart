@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1em;
+	color: #000;
+	background-color: #fff;
+}
+
+.container {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+header {
+	width: 100%;
+	height: 20vh;
+	background-color: #f00;
+	background: url("../images/foto1.jpg") repeat-x left top;
+  position: relative;
+}
+
+header img {
+  height: 10vh;
+  position: absolute;
+  left: calc(100% - 60vw);
+  top: 5vh;
+}
+
+section {
+	width: 100%;
+  margin: 0.5em 0em;
+	float: left;
+}
+
+section h1 {
+  font-weight: bold;
+  padding: 1em;
+}
+
+section a img {
+  margin: 2em 14%;
+}
+
+article {
+  font-size: 0.9em;
+  padding: 0 1em;
+  line-height: 1.5em;
+}
+
+.titel1, .titel2, .titel3 {
+  margin:: 0 1em;
+}
+
+.btn-line {
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 1em 0 1em 50%;
+}
+
+.btn-line:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.ik {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.werken {
+  width: 100%;
+}
+
+footer {
+	width: 100%;
+	height: 10vh;
+	clear: both;
+	background-color: #fff;
+  border-top: 3px double #000;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin: 2em 0;
+}
+
+.hide {
+  display: none;
+}
+
+@supports(grid-area:auto) {
+	.container {
+		max-width: none;
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	header,
+	footer,
+	section {
+		grid-column: 1;
+	}
+}
+
+/* 768px ~ 48em*/
+@media only screen and (min-width: 768px) {
+	.container {
+		grid-template-columns: 1fr 1fr;
+	}
+
+  header img {
+    left: calc(100% - 55vw);
+  }
+
+	@supports(grid-area:auto) {
+		header,
+		footer {
+			grid-column: 1 / span 2;
+		}
+
+		section:nth-child(even) {
+			grid-column: 1;
+		}
+
+		section:nth-child(odd) {
+			grid-column: 2;
+		}
+	}
+}
+
+/* 900px ~ 56.25em */
+@media only screen and (min-width: 900px) {
+  header img {
+    left: calc(100% - 50vw);
+  }
+
+	@supports(grid-area:auto) {
+		.container {
+			grid-template-columns: 5% 1fr 1fr 5%;
+		}
+
+		header,
+		footer {
+			grid-column: 2 / span 2;
+		}
+
+		section:nth-child(even) {
+			grid-column: 2;
+		}
+
+		section:nth-child(odd) {
+			grid-column: 3;
+		}
+	}
+}
+
+/* 1100px ~ 68.75em */
